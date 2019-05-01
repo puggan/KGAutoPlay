@@ -1301,7 +1301,7 @@ var runAllAutomation = setInterval(function () {
             setTimeout(autoObserve, 0);
             setTimeout(autoCraft2, 0);
             setTimeout(autoHunt, 0);
-            setTimeout(autoAssign, 0);
+            //setTimeout(autoAssign, 0);
             gamePage.villageTab.updateTab();
         }
 
