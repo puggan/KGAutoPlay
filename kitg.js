@@ -407,11 +407,13 @@ function autoTrade() {
 
 // Hunt automatically
 function autoHunt() {
-    var tmpvalue = gamePage.resPool.get('furs').value
     var catpower = gamePage.resPool.get('manpower');
-    if(catpower.value > (catpower.maxValue - 1) || (tmpvalue / catpower.maxValue < 0.02)) {
-        gamePage.village.huntAll();
+    var squads = Math.floor(catpower.value / 100);
+    var maxsquads = Math.floor(catpower.maxValue / 100);
+    if(squads < maxsquads) {
+        return;
     }
+    gamePage.village.huntAll();
 }
 
 var resources = [
